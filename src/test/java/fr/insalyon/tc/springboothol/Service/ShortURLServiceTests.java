@@ -1,6 +1,9 @@
-package fr.insalyon.tc.springboothol;
+package fr.insalyon.tc.springboothol.Service;
 
 
+import fr.insalyon.tc.springboothol.Entity.ShortURL;
+import fr.insalyon.tc.springboothol.Misc.ShortCodeNotFoundException;
+import fr.insalyon.tc.springboothol.Repository.ShortURLRepository;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Rule;

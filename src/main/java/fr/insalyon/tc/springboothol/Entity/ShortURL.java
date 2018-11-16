@@ -1,11 +1,11 @@
-package fr.insalyon.tc.springboothol;
-
-import java.net.URI;
-import java.time.LocalDateTime;
+package fr.insalyon.tc.springboothol.Entity;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.net.URI;
+import java.time.LocalDateTime;
 
 @Document 
 public class ShortURL { 

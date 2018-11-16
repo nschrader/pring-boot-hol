@@ -1,4 +1,4 @@
-package fr.insalyon.tc.springboothol;
+package fr.insalyon.tc.springboothol.Misc;
 
 public class ShortCodeNotFoundException extends RuntimeException {
 
