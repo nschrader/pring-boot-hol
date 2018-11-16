@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 
@@ -40,6 +37,17 @@ public class ShortURLController {
         } catch (ShortCodeNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/{shortCode}/info")
+    @ResponseBody
+    public ShortURL infoShortCode(@PathVariable String shortCode) throws ShortCodeNotFoundException {
+        return shortURLService.expandShortCode(shortCode);
+    }
+
+    @ExceptionHandler(ShortCodeNotFoundException.class)
+    public ResponseEntity handleException() {
+        return ResponseEntity.notFound().build();
     }
 
 }
